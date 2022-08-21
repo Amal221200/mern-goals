@@ -2,11 +2,11 @@ require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const colors = require('colors');
-// const cors = require('cors');
+const cors = require('cors');
 const dbConnect = require('./config/db')
 const app = express()
 
-// app.use(cors())
+app.use(cors())
 dbConnect()
 
 const port = process.env.PORT || 5000

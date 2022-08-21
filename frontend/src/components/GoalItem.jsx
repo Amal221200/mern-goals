@@ -6,7 +6,6 @@ const GoalItem = ({ goal }) => {
 
   const dispatch = useDispatch()
   const onDelete = (id) => {
-    console.log(id)
     dispatch(deleteGoal(id))
   }
 

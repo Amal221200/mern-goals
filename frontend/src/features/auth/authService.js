@@ -1,28 +1,26 @@
 import axios from 'axios'
 
-const URL = 'http://localhost:5000'
+const signup = async (userData) => {
+    const res = await axios.post('/api/users/signup/', userData)
 
-const signup = async (userData)=>{
-    const res = await axios.post(`${URL}/api/users/signup/`, userData)
-
-    if(res.data){
+    if (res.data) {
         localStorage.setItem('user', JSON.stringify(res.data))
     }
 
     return res.data
 }
 
-const login = async (userData)=>{
-    const res = await axios.post(`${URL}/api/users/login/`, userData)
+const login = async (userData) => {
+    const res = await axios.post('/api/users/login/', userData)
 
-    if(res.data){
+    if (res.data) {
         localStorage.setItem('user', JSON.stringify(res.data))
     }
 
     return res.data
 }
 
-const logout = ()=>{
+const logout = () => {
     localStorage.removeItem('user')
 }
 
